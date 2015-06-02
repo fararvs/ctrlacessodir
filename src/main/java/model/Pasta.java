@@ -25,7 +25,7 @@ public class Pasta implements IPasta, Serializable{
     private String pas_nome;
     @Column(name = "pas_caminho", nullable = false, length = 100)
     private String pas_caminho;
-    @Transient
+    @Transient//Não sera gravado em banco de dados
     private final String msg = "Realizando Operações solicitadas para esse diretório";
     
     public Pasta() {
