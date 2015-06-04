@@ -28,7 +28,6 @@ public class PastaTest {
     @Before
     public void setUp() {
         pasta = new Pasta();
-        //pasta.setId(Integer.toUnsignedLong(1));
         pasta.setPas_nome("Diretório Raiz");
         pasta.setPas_caminho("/");
     }
@@ -42,11 +41,7 @@ public class PastaTest {
      */
     @Test
     public void testGetId() {
-        System.out.println("Testando Obter o Id, mas ele é gerado pelo banco");
-        Long expResult = 1L;
-        Long result = pasta.getId();
-        assertEquals(expResult, result);
-        fail("Este Teste Deve Falhar !.");
+        assertNull(pasta.getId());
     }
 
     /**
@@ -65,13 +60,9 @@ public class PastaTest {
      */
     @Test
     public void testGetPas_nome() {
-        System.out.println("getPas_nome");
-        Pasta instance = new Pasta();
-        String expResult = "";
-        String result = instance.getPas_nome();
+        String expResult = "Diretório Raiz";
+        String result = pasta.getPas_nome();
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
 
     /**
@@ -79,12 +70,9 @@ public class PastaTest {
      */
     @Test
     public void testSetPas_nome() {
-        System.out.println("setPas_nome");
-        String pas_nome = "";
-        Pasta instance = new Pasta();
-        instance.setPas_nome(pas_nome);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        String pas_nome = "Diretório Raiz";
+        pasta.setPas_nome(pas_nome);
+        assertEquals(pas_nome, pasta.getPas_nome());
     }
 
     /**
@@ -92,13 +80,9 @@ public class PastaTest {
      */
     @Test
     public void testGetPas_caminho() {
-        System.out.println("getPas_caminho");
-        Pasta instance = new Pasta();
-        String expResult = "";
-        String result = instance.getPas_caminho();
+        String expResult = "/";
+        String result = pasta.getPas_caminho();
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
 
     /**
@@ -106,12 +90,9 @@ public class PastaTest {
      */
     @Test
     public void testSetPas_caminho() {
-        System.out.println("setPas_caminho");
-        String pas_caminho = "";
-        Pasta instance = new Pasta();
-        instance.setPas_caminho(pas_caminho);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        String pas_caminho = "/";
+        pasta.setPas_caminho(pas_caminho);
+        assertEquals(pas_caminho, pasta.getPas_caminho());
     }
 
     /**
@@ -119,13 +100,11 @@ public class PastaTest {
      */
     @Test
     public void testToString() {
-        System.out.println("toString");
-        Pasta instance = new Pasta();
-        String expResult = "";
-        String result = instance.toString();
+        String expResult = pasta.getPas_caminho()+pasta.getPas_nome();
+        String result = pasta.toString();
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        //fail("Aqui a concatenação devia funcionar");
     }
 
     /**
@@ -133,13 +112,11 @@ public class PastaTest {
      */
     @Test
     public void testRealizaOperacoes() {
-        System.out.println("realizaOperacoes");
-        Pasta instance = new Pasta();
-        String expResult = "";
-        String result = instance.realizaOperacoes();
+        String expResult = "Realizando Operações solicitadas para esse diretório /Diretório Raiz";
+        String result = pasta.realizaOperacoes();
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        fail("Esta coisa vai falhar porque fiz uma gambiarra de concatenação, devo utlizar StringBuilder?");
     }
     
 }
