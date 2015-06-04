@@ -1,11 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
 <?import java.lang.*?>
 <?import java.util.*?>
 <?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.LoginController">
-    
+<AnchorPane id="AnchorPane" prefHeight="204.0" prefWidth="366.0" xmlns="http://javafx.com/javafx/8.0.45" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.LoginController">
+   <children>
+      <Label layoutX="74.0" layoutY="80.0" text="Usuário: " />
+      <Label layoutX="74.0" layoutY="110.0" text="Senha: " />
+      <Label fx:id="mensagem" layoutX="48.0" layoutY="144.0" />
+      <TextField fx:id="txtLogin" layoutX="132.0" layoutY="75.0" />
+      <PasswordField fx:id="txtSenha" layoutX="132.0" layoutY="105.0" />
+      <Button fx:id="btnEntrar" defaultButton="true" layoutX="132.0" layoutY="151.0" mnemonicParsing="false" onAction="#Entrar" prefHeight="26.0" prefWidth="70.0" text="Entrar" />
+      <Button cancelButton="true" layoutX="233.0" layoutY="151.0" mnemonicParsing="false" onAction="#Sair" prefHeight="26.0" prefWidth="70.0" text="Sair" />
+      <Label layoutX="141.0" layoutY="14.0" text="Bem Vindo" textFill="BLUE">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="63.0" layoutY="43.0" text="Controle de Acesso a Diretórios" textFill="BLUE">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+   </children>
 </AnchorPane>

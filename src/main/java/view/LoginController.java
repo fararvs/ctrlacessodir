@@ -1,10 +1,5 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package view;
-import java.io.File;
+import dao.UsuarioDao;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -12,11 +7,20 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javafx.application.Application;
 import static javafx.application.Application.launch;
+import javafx.application.Platform;
+import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+import javafx.scene.control.PasswordField;
+import javafx.scene.control.TextField;
+import javafx.scene.paint.Color;
 import javafx.stage.Stage;
+import model.Usuario;
 
 /**
  * FXML Controller class
@@ -24,7 +28,42 @@ import javafx.stage.Stage;
  * @author rvsfara
  */
 public class LoginController extends Application implements Initializable {
-
+    @FXML
+    private Button btnEntrar;
+    @FXML
+    private Button btnSair;
+    @FXML
+    private TextField txtLogin;
+    @FXML
+    private PasswordField txtSenha;
+    @FXML
+    private Label mensagem;
+    @FXML  
+    public void Entrar(ActionEvent event) throws IOException{
+        String login = txtLogin.getText();
+        String senha = txtSenha.getText();
+        UsuarioDao usuarios = new UsuarioDao();
+        Usuario usuarioEcontrado = usuarios.buscarPorLogin(login);
+        if(usuarioEcontrado.getUsuario().equals(login) & usuarioEcontrado.getSenha().equals(senha)){
+                //Abrir Tela Principal do Sistema
+                Stage stage = new Stage();
+                Parent root = FXMLLoader.load(PrincipalController.class.getResource("Principal.fxml"));
+                Scene scene = new Scene(root);
+                stage.setScene(scene);
+                stage.show();
+                Stage Telalogin = (Stage) btnEntrar.getScene().getWindow();
+                // do what you have to do
+                Telalogin.close();
+                
+        }else{
+            mensagem.setTextFill(Color.web("red"));
+            mensagem.setText("Usuário ou senha incorreta");
+        }
+    }    
+    @FXML
+    private void Sair(){
+        Platform.exit();
+    }
     /**
      * Initializes the controller class.
      */
