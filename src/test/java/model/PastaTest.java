@@ -114,9 +114,7 @@ public class PastaTest {
     public void testRealizaOperacoes() {
         String expResult = "Realizando Operações solicitadas para esse diretório /Diretório Raiz";
         String result = pasta.realizaOperacoes();
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("Esta coisa vai falhar porque fiz uma gambiarra de concatenação, devo utlizar StringBuilder?");
+        assertEquals("Esta coisa vai falhar porque fiz uma gambiarra de concatenação, devo utlizar StringBuilder?", expResult, result);
     }
     
 }
