@@ -16,7 +16,9 @@ public class UsuarioPadrao {
 
     public UsuarioPadrao() {
     }
-    public static void main(String[] args) {
+    
+
+    public static void criarUsuarioPadrao() {
         //Criando a pasta raiz
         Pasta p = new Pasta();
         p.setPas_nome("Diretório Raiz");

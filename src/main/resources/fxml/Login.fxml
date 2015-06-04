@@ -8,21 +8,21 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane id="AnchorPane" prefHeight="204.0" prefWidth="366.0" xmlns="http://javafx.com/javafx/8.0.45" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.LoginController">
+<AnchorPane id="AnchorPane" prefHeight="204.0" prefWidth="281.0" xmlns="http://javafx.com/javafx/8.0.45" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.LoginController">
    <children>
-      <Label layoutX="74.0" layoutY="80.0" text="Usuário: " />
-      <Label layoutX="74.0" layoutY="110.0" text="Senha: " />
-      <Label fx:id="mensagem" layoutX="48.0" layoutY="144.0" />
-      <TextField fx:id="txtLogin" layoutX="132.0" layoutY="75.0" />
-      <PasswordField fx:id="txtSenha" layoutX="132.0" layoutY="105.0" />
-      <Button fx:id="btnEntrar" defaultButton="true" layoutX="132.0" layoutY="151.0" mnemonicParsing="false" onAction="#Entrar" prefHeight="26.0" prefWidth="70.0" text="Entrar" />
-      <Button cancelButton="true" layoutX="233.0" layoutY="151.0" mnemonicParsing="false" onAction="#Sair" prefHeight="26.0" prefWidth="70.0" text="Sair" />
-      <Label layoutX="141.0" layoutY="14.0" text="Bem Vindo" textFill="BLUE">
+      <Label layoutX="25.0" layoutY="80.0" text="Usuário: " />
+      <Label layoutX="25.0" layoutY="110.0" text="Senha: " />
+      <Label fx:id="mensagem" layoutX="14.0" layoutY="174.0" prefHeight="16.0" prefWidth="250.0" />
+      <TextField fx:id="txtLogin" layoutX="83.0" layoutY="75.0" />
+      <PasswordField fx:id="txtSenha" layoutX="83.0" layoutY="105.0" />
+      <Button fx:id="btnEntrar" defaultButton="true" layoutX="83.0" layoutY="143.0" mnemonicParsing="false" onAction="#Entrar" prefHeight="26.0" prefWidth="70.0" text="Entrar" />
+      <Button cancelButton="true" layoutX="184.0" layoutY="143.0" mnemonicParsing="false" onAction="#Sair" prefHeight="26.0" prefWidth="70.0" text="Sair" />
+      <Label layoutX="92.0" layoutY="14.0" text="Bem Vindo" textFill="BLUE">
          <font>
             <Font name="System Bold" size="14.0" />
          </font>
       </Label>
-      <Label layoutX="63.0" layoutY="43.0" text="Controle de Acesso a Diretórios" textFill="BLUE">
+      <Label layoutX="14.0" layoutY="43.0" text="Controle de Acesso a Diretórios" textFill="BLUE">
          <font>
             <Font name="System Bold" size="14.0" />
          </font>
