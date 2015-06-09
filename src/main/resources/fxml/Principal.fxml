@@ -7,23 +7,23 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-
-<AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="800.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.45" fx:controller="view.PrincipalController">
+<AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8.0.45" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.PrincipalController">
    <children>
       <MenuBar prefHeight="29.0" prefWidth="800.0">
         <menus>
           <Menu mnemonicParsing="false" text="Arquivo">
             <items>
-              <MenuItem mnemonicParsing="false" text="Sair" />
+              <MenuItem mnemonicParsing="false" onAction="#Sair" text="Sair" />
             </items>
           </Menu>
           <Menu mnemonicParsing="false" text="Cadastros">
             <items>
               <MenuItem mnemonicParsing="false" text="Pastas" />
                   <SeparatorMenuItem mnemonicParsing="false" />
-                  <MenuItem mnemonicParsing="false" text="Usuarios" />
+                  <MenuItem mnemonicParsing="false" onAction="#cadUsuario" text="Usuarios" />
             </items>
           </Menu>
+            <Menu mnemonicParsing="false" onAction="#listarTudo" text="Atualizar" />
           <Menu mnemonicParsing="false" text="Ajuda">
             <items>
               <MenuItem mnemonicParsing="false" text="Sobre" />
@@ -33,10 +33,10 @@
       </MenuBar>
       <HBox layoutY="54.0" prefHeight="516.0" prefWidth="800.0">
          <children>
-            <ListView prefHeight="300.0" prefWidth="200.0" />
-            <ListView prefHeight="377.0" prefWidth="200.0" />
+            <ListView fx:id="lstUsuarios" onMouseClicked="#listarPastas" prefHeight="300.0" prefWidth="200.0" />
+            <ListView fx:id="lstPastas" prefHeight="377.0" prefWidth="200.0" />
             <ListView prefHeight="200.0" prefWidth="200.0" />
-            <ListView prefHeight="200.0" prefWidth="200.0" />
+            <ListView fx:id="lstMensagens" prefHeight="200.0" prefWidth="200.0" />
          </children>
       </HBox>
       <Label layoutX="54.0" layoutY="29.0" text="Usuários" textFill="BLUE">

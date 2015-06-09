@@ -92,6 +92,7 @@ public class LoginController extends Application implements Initializable {
             root = FXMLLoader.load(getClass().getResource("/fxml/Login.fxml"));
             Scene scene = new Scene(root);
             stage.setScene(scene);
+            stage.setTitle("Entrar em CTRLDIR");
             stage.show();
         } catch (IOException ex) {
             System.out.println("Não Encontrou Login.fxml");

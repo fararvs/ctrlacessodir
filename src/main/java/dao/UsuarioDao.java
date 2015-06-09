@@ -1,9 +1,13 @@
 package dao;
 
+import java.util.List;
 import javax.persistence.PersistenceException;
+import javax.persistence.TypedQuery;
+import javax.persistence.criteria.CriteriaBuilder;
+import javax.persistence.criteria.CriteriaQuery;
+import javax.persistence.criteria.Root;
 import model.Usuario;
 import org.hibernate.Criteria;
-import org.hibernate.Session;
 
 /**
  *
@@ -13,9 +17,8 @@ public class UsuarioDao extends GenericDao<Usuario>{
     public Usuario buscarPorLogin(String login) {
         Usuario usu = null;
         try {
-            getEntityManager().getTransaction().begin();
-            Session session = (Session) getEntityManager().getDelegate();  
-            Criteria criteria = session.createCriteria(Usuario.class);
+            getEntityManager().getTransaction().begin();  
+            Criteria criteria = getSession().createCriteria(Usuario.class);
             criteria.add(org.hibernate.criterion.Restrictions.eq("usuario", login));
             //usu = (Usuario) criteria.list().get(0);
             usu = (Usuario) criteria.uniqueResult();
@@ -25,19 +28,12 @@ public class UsuarioDao extends GenericDao<Usuario>{
         
         return usu;
     }
-//    public Usuario buscarPorLogin(String login) {
-//        Usuario usu = null;
-//        getEntityManager().getTransaction().begin();
-//        try {
-//            usu = (Usuario) getEntityManager().createNamedQuery("Usuario.findByLogin")
-//                    .setParameter("usuario", login)
-//                    .getSingleResult();
-//            System.out.println("Buscando usuário por login");
-//        } catch (PersistenceException e) {
-//            System.err.println(e.toString());
-//            getEntityManager().getTransaction().rollback();
-//        } 
-//        getEntityManager().getTransaction().commit();
-//        return usu;
-//    }    
+    public List<Usuario> allEntries() {
+        CriteriaBuilder cb = getEntityManager().getCriteriaBuilder();
+        CriteriaQuery<Usuario> cq = cb.createQuery(Usuario.class);
+        Root<Usuario> rootEntry = cq.from(Usuario.class);
+        CriteriaQuery<Usuario> all = cq.select(rootEntry);
+        TypedQuery<Usuario> allQuery = getEntityManager().createQuery(all);
+        return allQuery.getResultList();
+    }  
 }

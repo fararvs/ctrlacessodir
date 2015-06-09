@@ -6,6 +6,24 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.CadUsuarioController">
-    
+<AnchorPane id="AnchorPane" prefHeight="319.0" prefWidth="586.0" xmlns="http://javafx.com/javafx/8.0.45" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.CadUsuarioController">
+   <children>
+      <Label layoutX="16.0" layoutY="22.0" text="Nome: " />
+      <TextField fx:id="txtNome" layoutX="82.0" layoutY="17.0" />
+      <Label layoutX="16.0" layoutY="57.0" text="Usuário: " />
+      <Label layoutX="15.0" layoutY="92.0" text="Senha: " />
+      <Label layoutX="15.0" layoutY="128.0" text="Pergunta de Segurança: " />
+      <Label layoutX="15.0" layoutY="164.0" text="Resposta de Segurança: " />
+      <Label layoutX="15.0" layoutY="201.0" text="Pasta do Usuário: " />
+      <TextField fx:id="txtUsuario" layoutX="82.0" layoutY="52.0" />
+      <CheckBox fx:id="ckbAdmin" layoutX="364.0" layoutY="56.0" mnemonicParsing="false" text="Administrador ? " />
+      <PasswordField fx:id="txtSenha" layoutX="82.0" layoutY="87.0" />
+      <TextField fx:id="txtPseguranca" layoutX="189.0" layoutY="123.0" prefHeight="26.0" prefWidth="383.0" />
+      <TextField fx:id="txtRseguranca" layoutX="189.0" layoutY="159.0" prefHeight="26.0" prefWidth="383.0" />
+      <TextField fx:id="txtPasta" layoutX="189.0" layoutY="196.0" prefHeight="26.0" prefWidth="383.0" />
+      <TextField fx:id="txtCPasta" layoutX="189.0" layoutY="232.0" prefHeight="26.0" prefWidth="383.0" />
+      <Button defaultButton="true" layoutX="15.0" layoutY="279.0" mnemonicParsing="false" text="Salvar " />
+      <Button layoutX="495.0" layoutY="279.0" mnemonicParsing="false" text="Cancelar" />
+      <Label layoutX="15.0" layoutY="237.0" text="Caminho da Pasta: " />
+   </children>
 </AnchorPane>

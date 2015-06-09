@@ -2,11 +2,14 @@ package model;
 
 import util.IPasta;
 import java.io.Serializable;
+import java.util.List;
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.persistence.Transient;
 
@@ -25,6 +28,8 @@ public class Pasta implements IPasta, Serializable{
     private String pas_nome;
     @Column(name = "pas_caminho", nullable = false, length = 100)
     private String pas_caminho;
+    @OneToMany(mappedBy = "pasta", targetEntity = Arquivo.class, cascade = CascadeType.ALL)
+    private List<Arquivo> lstArquivos;
     @Transient//Não sera gravado em banco de dados
     private final String msg = "Realizando Operações solicitadas para esse diretório";
     

@@ -1,11 +1,13 @@
 package model;
 
 import java.io.Serializable;
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.persistence.Transient;
@@ -35,7 +37,8 @@ public class Usuario implements Serializable {
     private String resSeguranca;
     @Column(name = "usu_admin", nullable = false)
     private Boolean admin;
-    @OneToOne
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "pas_id")
     private Pasta diretorio;
     @Transient
     private Estado estado = new Desconectado();

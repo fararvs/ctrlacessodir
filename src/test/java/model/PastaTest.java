@@ -6,6 +6,7 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
+import org.junit.Ignore;
 
 /**
  *
@@ -110,6 +111,7 @@ public class PastaTest {
     /**
      * Test of realizaOperacoes method, of class Pasta.
      */
+    @Ignore
     @Test
     public void testRealizaOperacoes() {
         String expResult = "Realizando Operações solicitadas para esse diretório /Diretório Raiz";
