@@ -25,7 +25,7 @@ public class UsuarioDao extends GenericDao<Usuario>{
         } catch (PersistenceException e) {
             e.getMessage();
         }
-        
+        getEntityManager().getTransaction().commit();
         return usu;
     }
     public List<Usuario> allEntries() {

@@ -1,4 +1,4 @@
-package rotina;
+package template;
 
 import dao.MensagemDao;
 import dao.PastaDao;
@@ -8,17 +8,15 @@ import java.util.List;
 import model.Mensagem;
 import model.Pasta;
 import model.Usuario;
-import state.Desconectado;
-import state.Estado;
 import validacao.EstrategiaValidacao;
 
 /**
  *
  * @author rvsfara
  */
-public class UsuarioPadrao {
+public class Rotina {
 
-    public UsuarioPadrao() {
+    public Rotina() {
     }
     
 
@@ -46,8 +44,7 @@ public class UsuarioPadrao {
         msg.setTexto("Nova Pasta: "+p2.getPas_nome());
         lstMsg.add(msg);
         //Criando o Estado default
-        Estado st = new Desconectado();
-        EstrategiaValidacao autentica;
+        //EstrategiaValidacao autentica;
         Usuario usu = new Usuario();
         Usuario usu1 = new Usuario();
         Usuario usu2 = new Usuario();
@@ -60,9 +57,9 @@ public class UsuarioPadrao {
         usu.setAdmin(Boolean.TRUE);
         usu1.setAdmin(Boolean.FALSE);
         usu2.setAdmin(Boolean.FALSE);
-        usu.setEstado(st);
-        usu1.setEstado(st);
-        usu2.setEstado(st);
+        usu.setEstado(EstadoPadrao.criarEstadoPadrao());
+        usu1.setEstado(EstadoPadrao.criarEstadoPadrao());
+        usu2.setEstado(EstadoPadrao.criarEstadoPadrao());
         usu.setPerSeguranca("Qual seu personagem favorito");
         usu1.setPerSeguranca("Qual seu time favorito");
         usu2.setPerSeguranca("Qual seu time favorito");

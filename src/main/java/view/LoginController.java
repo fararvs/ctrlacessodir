@@ -22,7 +22,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import model.Usuario;
-import rotina.UsuarioPadrao;
+import template.Template;
 
 /**
  * FXML Controller class
@@ -46,7 +46,8 @@ public class LoginController extends Application implements Initializable {
     public void Entrar(ActionEvent event) throws IOException {
         String login = txtLogin.getText();
         String senha = txtSenha.getText();
-        UsuarioPadrao.criarUsuarioPadrao();
+        //Rotina.criarUsuarioPadrao();
+        Template.popularBanco();
         UsuarioDao usuarios = new UsuarioDao();
         Usuario usuarioEcontrado = usuarios.buscarPorLogin(login);
         if (usuarioEcontrado != null) {

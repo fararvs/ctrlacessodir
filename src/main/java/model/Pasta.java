@@ -1,6 +1,6 @@
 package model;
 
-import util.IPasta;
+import proxy.IPasta;
 import java.io.Serializable;
 import java.util.List;
 import javax.persistence.CascadeType;

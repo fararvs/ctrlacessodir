@@ -1,4 +1,4 @@
-package util;
+package proxy;
 
 import model.Pasta;
 import model.Usuario;
