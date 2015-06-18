@@ -6,7 +6,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane id="AnchorPane" prefHeight="319.0" prefWidth="586.0" xmlns="http://javafx.com/javafx/8.0.45" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.CadUsuarioController">
+<AnchorPane id="AnchorPane" prefHeight="330.0" prefWidth="586.0" xmlns="http://javafx.com/javafx/8.0.45" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.CadUsuarioController">
    <children>
       <Label layoutX="16.0" layoutY="22.0" text="Nome: " />
       <TextField fx:id="txtNome" layoutX="82.0" layoutY="17.0" />
@@ -22,8 +22,9 @@
       <TextField fx:id="txtRseguranca" layoutX="189.0" layoutY="159.0" prefHeight="26.0" prefWidth="383.0" />
       <TextField fx:id="txtPasta" layoutX="189.0" layoutY="196.0" prefHeight="26.0" prefWidth="383.0" />
       <TextField fx:id="txtCPasta" layoutX="189.0" layoutY="232.0" prefHeight="26.0" prefWidth="383.0" />
-      <Button defaultButton="true" layoutX="15.0" layoutY="279.0" mnemonicParsing="false" text="Salvar " />
-      <Button layoutX="495.0" layoutY="279.0" mnemonicParsing="false" text="Cancelar" />
+      <Button defaultButton="true" layoutX="15.0" layoutY="279.0" mnemonicParsing="false" onAction="#Salvar" text="Salvar " />
+      <Button layoutX="495.0" layoutY="279.0" mnemonicParsing="false" onAction="#Sair" text="Cancelar" />
       <Label layoutX="15.0" layoutY="237.0" text="Caminho da Pasta: " />
+      <Label fx:id="msg" layoutX="14.0" layoutY="308.0" text="Mensagem: " />
    </children>
 </AnchorPane>

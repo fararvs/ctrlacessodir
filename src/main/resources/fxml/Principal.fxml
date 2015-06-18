@@ -7,9 +7,9 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8.0.45" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.PrincipalController">
+<AnchorPane id="AnchorPane" prefHeight="700.0" prefWidth="590.0" xmlns="http://javafx.com/javafx/8.0.45" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.PrincipalController">
    <children>
-      <MenuBar prefHeight="29.0" prefWidth="800.0">
+      <MenuBar prefHeight="29.0" prefWidth="598.0">
         <menus>
           <Menu mnemonicParsing="false" text="Arquivo">
             <items>
@@ -18,8 +18,6 @@
           </Menu>
           <Menu mnemonicParsing="false" text="Cadastros">
             <items>
-              <MenuItem mnemonicParsing="false" text="Pastas" />
-                  <SeparatorMenuItem mnemonicParsing="false" />
                   <MenuItem mnemonicParsing="false" onAction="#cadUsuario" text="Usuarios" />
             </items>
           </Menu>
@@ -31,12 +29,11 @@
           </Menu>
         </menus>
       </MenuBar>
-      <HBox layoutY="54.0" prefHeight="516.0" prefWidth="800.0">
+      <HBox layoutY="54.0" prefHeight="431.0" prefWidth="598.0">
          <children>
             <ListView fx:id="lstUsuarios" onMouseClicked="#listarPastas" prefHeight="300.0" prefWidth="200.0" />
-            <ListView fx:id="lstPastas" prefHeight="377.0" prefWidth="200.0" />
-            <ListView prefHeight="200.0" prefWidth="200.0" />
-            <ListView fx:id="lstMensagens" prefHeight="200.0" prefWidth="200.0" />
+            <ListView fx:id="lstPastas" onMouseClicked="#efetuarOperacoes" prefHeight="377.0" prefWidth="200.0" />
+            <ListView prefHeight="516.0" prefWidth="200.0" />
          </children>
       </HBox>
       <Label layoutX="54.0" layoutY="29.0" text="Usuários" textFill="BLUE">
@@ -54,10 +51,11 @@
             <Font name="System Bold" size="18.0" />
          </font>
       </Label>
-      <Label layoutX="641.0" layoutY="29.0" text="Mensagens" textFill="RED">
-         <font>
-            <Font name="System Bold" size="18.0" />
-         </font>
-      </Label>
+      <HBox layoutX="-6.0" layoutY="491.0" prefHeight="180.0" prefWidth="613.0">
+         <children>
+            <ListView fx:id="lstMensagens" prefHeight="169.0" prefWidth="605.0" />
+         </children>
+      </HBox>
+      <Label fx:id="msg" layoutX="14.0" layoutY="678.0" text="Mensagem: Bem Vindo  " />
    </children>
 </AnchorPane>

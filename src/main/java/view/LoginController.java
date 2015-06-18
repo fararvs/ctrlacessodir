@@ -1,6 +1,7 @@
 package view;
 
-import dao.UsuarioDao;
+import comand.Padrao;
+import comand.ValidacaoComand;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -46,10 +47,9 @@ public class LoginController extends Application implements Initializable {
     public void Entrar(ActionEvent event) throws IOException {
         String login = txtLogin.getText();
         String senha = txtSenha.getText();
-        //Rotina.criarUsuarioPadrao();
-        Template.popularBanco();
-        UsuarioDao usuarios = new UsuarioDao();
-        Usuario usuarioEcontrado = usuarios.buscarPorLogin(login);
+        ValidacaoComand validar = new Padrao();//Utilizando o Padrão Comand
+        //Template.popularBanco();//utilizando o Padrão Template
+        Usuario usuarioEcontrado = validar.autenticar(login);
         if (usuarioEcontrado != null) {
             if (usuarioEcontrado.getUsuario().equals(login) & usuarioEcontrado.getSenha().equals(senha)) {
                 //Abrir Tela Principal do Sistema
@@ -57,6 +57,7 @@ public class LoginController extends Application implements Initializable {
                 Parent root = FXMLLoader.load(PrincipalController.class.getResource("/fxml/Principal.fxml"));
                 Scene scene = new Scene(root);
                 stage.setScene(scene);
+                stage.setTitle(usuarioEcontrado.getUsuario());
                 stage.show();
                 Stage Telalogin = (Stage) btnEntrar.getScene().getWindow();
                 // do what you have to do
@@ -79,6 +80,8 @@ public class LoginController extends Application implements Initializable {
 
     /**
      * Initializes the controller class.
+     * @param url
+     * @param rb
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {

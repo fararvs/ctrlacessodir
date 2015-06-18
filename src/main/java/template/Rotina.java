@@ -8,7 +8,6 @@ import java.util.List;
 import model.Mensagem;
 import model.Pasta;
 import model.Usuario;
-import validacao.EstrategiaValidacao;
 
 /**
  *
