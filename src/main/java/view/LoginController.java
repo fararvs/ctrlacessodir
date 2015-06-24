@@ -1,7 +1,9 @@
 package view;
 
 import comand.Padrao;
+import comand.PerguntaSeguranca;
 import comand.ValidacaoComand;
+import dao.UsuarioDao;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -39,9 +41,13 @@ public class LoginController extends Application implements Initializable {
     @FXML
     private TextField txtLogin;
     @FXML
+    private TextField txtResposta;
+    @FXML
     private PasswordField txtSenha;
     @FXML
     private Label mensagem;
+    @FXML
+    private Label pergunta;
 
     @FXML
     public void Entrar(ActionEvent event) throws IOException {
@@ -67,6 +73,48 @@ public class LoginController extends Application implements Initializable {
                 mensagem.setTextFill(Color.web("red"));
                 mensagem.setText("Senha Incorreta");
             }
+        }else{
+            mensagem.setTextFill(Color.web("red"));
+            mensagem.setText("Usuário não Encontrado");
+        }
+    }
+    @FXML
+    public void EsqueciSenha(ActionEvent event) throws IOException {
+        String login = txtLogin.getText();
+        String resposta = txtResposta.getText();
+        ValidacaoComand validar = new PerguntaSeguranca();//Utilizando o Padrão Comand
+        //Template.popularBanco();//utilizando o Padrão Template
+        Usuario usuarioEcontrado = validar.autenticar(resposta);
+        if (usuarioEcontrado != null) {
+            if (usuarioEcontrado.getUsuario().equals(login) & usuarioEcontrado.getResSeguranca().equals(resposta)) {
+                //Abrir Tela Principal do Sistema
+                Stage stage = new Stage();
+                Parent root = FXMLLoader.load(PrincipalController.class.getResource("/fxml/Principal.fxml"));
+                Scene scene = new Scene(root);
+                stage.setScene(scene);
+                stage.setTitle(usuarioEcontrado.getUsuario());
+                stage.show();
+                Stage Telalogin = (Stage) btnEntrar.getScene().getWindow();
+                // do what you have to do
+                Telalogin.close();
+
+            } else {
+                mensagem.setTextFill(Color.web("red"));
+                mensagem.setText("Resposta Incorreta");
+            }
+        }else{
+            mensagem.setTextFill(Color.web("red"));
+            mensagem.setText("Usuário não Encontrado");
+        }
+        
+    }
+     @FXML
+    public void Esqueci(ActionEvent event) throws IOException {
+        String login = txtLogin.getText();
+         UsuarioDao uDao = new UsuarioDao();
+        Usuario usuarioEcontrado = uDao.buscarPorLogin(login);
+        if (usuarioEcontrado != null) {
+            pergunta.setText(usuarioEcontrado.getPerSeguranca());
         }else{
             mensagem.setTextFill(Color.web("red"));
             mensagem.setText("Usuário não Encontrado");

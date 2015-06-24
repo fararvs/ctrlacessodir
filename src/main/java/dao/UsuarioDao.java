@@ -28,6 +28,21 @@ public class UsuarioDao extends GenericDao<Usuario>{
         getEntityManager().getTransaction().commit();
         return usu;
     }
+    public Usuario buscarPorResposta(String resposta) {
+        Usuario usu = null;
+        try {
+            getEntityManager().getTransaction().begin();  
+            Criteria criteria = getSession().createCriteria(Usuario.class);
+            criteria.add(org.hibernate.criterion.Restrictions.eq("resSeguranca", resposta));
+            //usu = (Usuario) criteria.list().get(0);
+            usu = (Usuario) criteria.uniqueResult();
+        } catch (PersistenceException e) {
+            e.getMessage();
+        }
+        getEntityManager().getTransaction().commit();
+        return usu;
+    }
+
     public List<Usuario> allEntries() {
         CriteriaBuilder cb = getEntityManager().getCriteriaBuilder();
         CriteriaQuery<Usuario> cq = cb.createQuery(Usuario.class);

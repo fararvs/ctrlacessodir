@@ -1,0 +1,72 @@
+[root@rvsfara rvsfara]# pacman -S ruby apache postgresql git 
+resolvendo dependências...
+procurando por pacotes conflitantes...
+
+Pacotes (8) apr-1.5.2-1  apr-util-1.5.4-1  libyaml-0.1.6-1  perl-error-0.17024-1  apache-2.4.12-4  git-2.4.2-1  postgresql-9.4.2-1  ruby-2.2.2-1
+
+Tamanho total download:   14,80 MiB
+Tamanho total instalado:  75,54 MiB
+
+:: Continuar a instalação? [S/n] S
+:: Obtendo pacotes ...
+ libyaml-0.1.6-1-x86_64                                                      53,0 KiB   841K/s 00:00 [############################################################] 100%
+ ruby-2.2.2-1-x86_64                                                          4,0 MiB  7,64M/s 00:01 [############################################################] 100%
+ apr-1.5.2-1-x86_64                                                         226,5 KiB  11,1M/s 00:00 [############################################################] 100%
+ apr-util-1.5.4-1-x86_64                                                    152,9 KiB  14,9M/s 00:00 [############################################################] 100%
+ apache-2.4.12-4-x86_64                                                    1306,6 KiB  8,13M/s 00:00 [############################################################] 100%
+ postgresql-9.4.2-1-x86_64                                                    5,0 MiB  9,07M/s 00:01 [############################################################] 100%
+ perl-error-0.17024-1-any                                                    18,4 KiB  0,00B/s 00:00 [############################################################] 100%
+ git-2.4.2-1-x86_64                                                           4,1 MiB  6,36M/s 00:01 [############################################################] 100%
+(8/8) verificando chaves no chaveiro                                                                 [############################################################] 100%
+(8/8) verificando integridade do pacote                                                              [############################################################] 100%
+(8/8) carregando arquivos do pacote                                                                  [############################################################] 100%
+(8/8) verificando conflitos de arquivo                                                               [############################################################] 100%
+(8/8) verificando espaço em disco disponível                                                         [############################################################] 100%
+(1/8) instalando libyaml                                                                             [############################################################] 100%
+(2/8) instalando ruby                                                                                [############################################################] 100%
+The default location of gem installs is $HOME/.gem/ruby
+Add the following line to your PATH if you plan to install using gem
+$(ruby -rubygems -e "puts Gem.user_dir")/bin
+If you want to install to the system wide location, you must either:
+edit /etc/gemrc or run gem with the --no-user-install flag.
+Dependências opcionais para ruby
+    ruby-docs: Ruby documentation
+    tk: for Ruby/TK
+(3/8) instalando apr                                                                                 [############################################################] 100%
+(4/8) instalando apr-util                                                                            [############################################################] 100%
+Dependências opcionais para apr-util
+    gdbm: enable gdbm support [instalado]
+    libldap: enable ldap support [instalado]
+    unixodbc: enable odbc support [instalado]
+    libmariadbclient: enable mysql/mariadb support [instalado]
+    postgresql-libs: enable postgres support [instalado]
+    db: enable berkley db support [instalado]
+    sqlite: enable sqlite support [instalado]
+    nss: enable nss crypto support [instalado]
+    openssl: enable openssl crypto support [instalado]
+(5/8) instalando apache                                                                              [############################################################] 100%
+Dependências opcionais para apache
+    lua: for mod_lua module [instalado]
+    openssl: for mod_ssl module [instalado]
+    libxml2: for mod_proxy_html, mod_xml2enc modules [instalado]
+    lynx: apachectl status
+(6/8) instalando postgresql                                                                          [############################################################] 100%
+Dependências opcionais para postgresql
+    python2: for PL/Python support [instalado]
+    perl: for PL/Perl support [instalado]
+    tcl: for PL/Tcl support
+    postgresql-old-upgrade: upgrade from previous major version using pg_upgrade
+(7/8) instalando perl-error                                                                          [############################################################] 100%
+(8/8) instalando git                                                                                 [############################################################] 100%
+Dependências opcionais para git
+    tk: gitk and git gui
+    perl-libwww: git svn
+    perl-term-readkey: git svn
+    perl-mime-tools: git send-email
+    perl-net-smtp-ssl: git send-email TLS support
+    perl-authen-sasl: git send-email TLS support
+    python2: various helper scripts [instalado]
+    subversion: git svn
+    cvsps2: git cvsimport
+    gnome-keyring: GNOME keyring credential helper
+[root@rvsfara rvsfara]# 

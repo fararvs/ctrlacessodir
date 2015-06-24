@@ -1,0 +1,4 @@
+[root@rvsfara /]# systemctl start postgresql
+[root@rvsfara /]# cd /usr/share/webapps/redmine
+[root@rvsfara redmine]# export PATH="$PATH:/root/.gem/ruby/2.2.0/bin"
+[root@rvsfara redmine]# bundle exec ruby bin/rails server webrick -e production

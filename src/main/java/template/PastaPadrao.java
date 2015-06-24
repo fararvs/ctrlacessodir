@@ -9,7 +9,7 @@ import model.Pasta;
  *
  * @author rvsfara
  */
-public class PastaPadrao {
+public class PastaPadrao extends Template{
     public static void criarPastaPadrao(){
         
         Pasta p = new Pasta();

@@ -1,0 +1,41 @@
+export http_proxy=http://200.134.81.53:3128/
+export https_proxy=http://200.134.81.53:3128/
+yaourt -S scenebuilder
+ruby -e "print Gem.user_dir"
+yaourt -S redmine
+gem install bundler
+nano /etc/profile
+source /etc/profile
+bundle install --without development test postgresql
+source /etc/profile
+bundle install --without production postresql
+gem install  prototype-rails
+ssh-keygen -t rsa -b 4096 -C "rvsfara@gmail.com"
+eval "$(ssh-agent -s)"
+ssh-add ~/.ssh/id_rsa
+nano ~/.ssh/id_rsa.pub
+ssh -T rvsfara@github.com
+git config color.ui true
+git config --global http.proxy http://200.134.81.53:3128
+git remote add origin git@github.com:fararvs/ctrlacessodir.git
+git config --global user.email "rvsfara@gmail.com"
+git commit -a -m "Primeiro Commit do Projeto Tentando Fazer Upload"
+git push origin master
+git fetch origin
+nano .git/config 
+cd /opt
+mkdir tomcat
+cd projetos/
+cd ControleAcessoDiretorios/
+git init
+git add .
+git status
+git commit -a
+git commit
+rm .git/index.lock 
+git commit
+git remote -v
+git push -f origin master
+ssh -T git@github.com
+git remote set-url origin https://github.com/fararvs/ctrlacessodir.git
+git push -f origin master

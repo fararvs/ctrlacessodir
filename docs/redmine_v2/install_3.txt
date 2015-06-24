@@ -1,0 +1,42 @@
+[postgres@rvsfara ~]$ initdb --locale pt_BR.UTF-8 -E UTF8 -D '/var/lib/postgres/data'
+Os arquivos deste sistema de banco de dados pertencerão ao usuário "postgres".
+Esse usuário deve ser o dono do processo do servidor também.
+
+O agrupamento de banco de dados será inicializado com configuração regional "pt_BR.UTF-8".
+A configuração de busca textual padrão será definida como "portuguese".
+
+Verificações de páginas de dados estão desabilitadas.
+
+alterando permissões no diretório existente /var/lib/postgres/data ... ok
+criando subdiretórios ... ok
+selecionando max_connections padrão ... 100
+selecionando shared_buffers padrão ... 128MB
+selecionando implementação de memória compartilhada dinâmica ... posix
+criando arquivos de configuração ... ok
+criando banco de dados template1 em /var/lib/postgres/data/base/1 ... ok
+inicializando pg_authid ... ok
+inicializando dependências ... ok
+criando visões do sistema ... ok
+carregando descrições de objetos do sistema ... ok
+criando ordenações ... ok
+criando conversões ... ok
+criando dicionários ... ok
+definindo privilégios dos objetos embutidos ... ok
+criando esquema informação ... ok
+carregando linguagem PL/pgSQL ... ok
+limpando banco de dados template1 ... ok
+copiando template1 para template0 ... ok
+copiando template1 para postgres ... ok
+sincronizando dados no disco ... ok
+
+AVISO: habilitando método de autenticação "trust" para conexões locais
+Você pode mudá-lo editando o pg_hba.conf ou utilizando a opção -A, ou
+--auth-local e --auth-host, na próxima vez que você executar o initdb.
+
+Sucesso. Você pode iniciar o servidor de banco de dados utilizando:
+
+    postgres -D /var/lib/postgres/data
+ou
+    pg_ctl -D /var/lib/postgres/data -l logfile start
+
+[postgres@rvsfara ~]$ 

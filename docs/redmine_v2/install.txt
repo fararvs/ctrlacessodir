@@ -1,0 +1,137 @@
+[rvsfara@rvsfara ~]$ yaourt -S redmine
+
+==> Fazendo download do PKGBUILD de redmine do AUR...
+x .SRCINFO
+x PKGBUILD
+Comment by mawcomw  (2014-01-10 00:57)
+@RubenKelevra: i retested it all again and didn't get any error.
+
+It could be incompatibilities with some plugins you are using, or maybe you forgot to run the "bundle update", and a outdated gem isn't updated...
+
+It seems to be something with an outdated gem or a plugin... Could you send me your gem list and plugins list (with versions)?
+
+Thanks for your report.
+
+Comment by Cybo  (2014-04-21 07:02)
+pkgbuild diff for 2.5.1: https://gist.github.com/anonymous/11134530
+
+Comment by ryanjacobs  (2015-01-20 07:09)
+@mawcomw Can you please update this for v2.6.1? Thanks.
+
+Comment by Tido.com  (2015-02-03 22:30)
+Until the package is updated you can modify the PKGBUILD with this one-liner:
+
+echo -e "5,6c5,6\n pkgver=2.6.0\n pkgrel=2\n---\n pkgver=2.6.1\n pkgrel=0\n41c41\n md5sums=('bc0b9b8f078557c084719be429ef2067')\n---\n md5sums=('dce687396b393ccaf26fdcd3465b7436')" | patch PKGBUILD
+
+or if you prefer the diff:
+5,6c5,6
+pkgver=2.6.0
+pkgrel=2
+---
+pkgver=2.6.1
+pkgrel=0
+41c41
+md5sums=('bc0b9b8f078557c084719be429ef2067')
+---
+md5sums=('dce687396b393ccaf26fdcd3465b7436')
+
+Comment by Tido.com  (2015-04-23 11:07)
+Until the package is updated you can modify the PKGBUILD with this one-liner:
+
+echo -e "5,6c5,6\n pkgver=3.0.0\n pkgrel=1\n---\n pkgver=3.0.1\n pkgrel=0\n41c41\n md5sums=('946d6c7173033f62ad98892bb0939dcf')\n---\n md5sums=('bf63ceef4fde0d38d17d94969478d422')" | patch PKGBUILD
+
+or if you prefer the diff:
+5,6c5,6
+pkgver=3.0.0
+pkgrel=1
+---
+pkgver=3.0.1
+pkgrel=0
+41c41
+md5sums=('946d6c7173033f62ad98892bb0939dcf')
+---
+md5sums=('bf63ceef4fde0d38d17d94969478d422')
+
+redmine 3.0.2-1  (Dom Mar  3 12:34:21 BRT 2013)
+( Pacote sem suporte: Potencialmente perigoso ! )
+==> Editar PKGBUILD ? [S/n] ("A" para abortar)
+==> ------------------------------------------
+==> n
+
+==> Dependências de redmine:
+
+
+==> Continuar a compilação de redmine ? [S/n]
+==> -----------------------------------------
+==> 
+==> Compilando e instalando pacote
+==> Criando o pacote: redmine 3.0.2-1 (Seg Jun  1 19:35:31 BRT 2015)
+==> Verificando as dependências de tempo de execução...
+==> Verificando as dependências de tempo de compilação...
+==> Obtendo fontes...
+  -> Baixando redmine-3.0.2.tar.gz...
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100 2106k  100 2106k    0     0   287k      0  0:00:07  0:00:07 --:--:--  373k
+==> Validando arquivos fonte com md5sums...
+    redmine-3.0.2.tar.gz ... Passou
+==> Extraindo fontes...
+  -> Extraindo redmine-3.0.2.tar.gz com bsdtar
+==> Iniciando build()...
+==> Entrando no ambiente fakeroot...
+==> Iniciando package()...
+==> Organizando a instalação...
+  -> Expurgando arquivos indesejados...
+  -> Removendo arquivos libtool...
+  -> Removendo arquivos de biblioteca estática...
+==> ATENÇÃO: Arquivo de entrada backup não está no pacote : usr/share/webapps/redmine/config/configuration.yml
+==> ATENÇÃO: Arquivo de entrada backup não está no pacote : usr/share/webapps/redmine/config/database.yml
+  -> Comprimindo páginas de man e info...
+  -> Removendo símbolos desnecessários dos executáveis e bibliotecas...
+==> Criando pacote "redmine"...
+  -> Gerando arquivo .PKGINFO...
+  -> Gerando arquivo .MTREE ...
+  -> Compactando pacote...
+==> Saindo do ambiente de fakeroot.
+==> Compilação concluída: redmine 3.0.2-1 (Seg Jun  1 19:35:59 BRT 2015)
+
+==> Continuar a instalação de redmine ? [S/n]
+==> [V]er conteúdo do pacote [C]hecar pacote com namcap
+==> ---------------------------------------------------
+==> S
+
+[sudo] senha para rvsfara: 
+carregando pacotes...
+resolvendo dependências...
+procurando por pacotes conflitantes...
+
+Pacotes (1) redmine-3.0.2-1
+
+Tamanho total instalado:  8,90 MiB
+
+:: Continuar a instalação? [S/n] S
+(1/1) verificando chaves no chaveiro                                                                 [############################################################] 100%
+(1/1) verificando integridade do pacote                                                              [############################################################] 100%
+(1/1) carregando arquivos do pacote                                                                  [############################################################] 100%
+(1/1) verificando conflitos de arquivo                                                               [############################################################] 100%
+(1/1) verificando espaço em disco disponível                                                         [############################################################] 100%
+(1/1) instalando redmine                                                                             [############################################################] 100%
+Dependências opcionais para redmine
+    ruby: a dynamic, interpreted, open source programming language
+    rvm: a command line tool to easily manage multiple Ruby environments
+    rbenv: another command line tool to easily manage multiple Ruby environments
+    apache: a supported application server
+    nginx: a supported application server
+    tomcat6: a supported application server
+    tomcat7: a supported application server
+    mariadb: MariaDB database support
+    mysql: MySQL database support
+    postgresql: PostgreSQL database support
+    git: Git repository browsing
+    subversion: Subversion repository browsing
+    darcs: Darcs repository browsing
+    bzr: Bazaar repository browsing
+    mercurial: Mercurial repository browsing
+    cvs: CVS repository browsing
+    imagemagick: Image export support for Gantt
+[rvsfara@rvsfara ~]$ 

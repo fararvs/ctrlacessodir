@@ -1,0 +1,6 @@
+[root@rvsfara rvsfara]# cd /usr/share/webapps/redmine/config
+[root@rvsfara config]# cp database.yml.example database.yml
+[root@rvsfara config]# ls
+additional_environment.rb.example  boot.rb		      database.yml	    environment.rb  initializers  routes.rb
+application.rb			   configuration.yml.example  database.yml.example  environments    locales	  settings.yml
+[root@rvsfara config]# 

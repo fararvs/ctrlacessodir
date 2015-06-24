@@ -9,7 +9,7 @@ import model.Usuario;
  *
  * @author rvsfara
  */
-public class UsuarioPadrao {
+public class UsuarioPadrao extends Template{
 
     public UsuarioPadrao() {
     }

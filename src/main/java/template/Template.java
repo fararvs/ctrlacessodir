@@ -11,7 +11,7 @@ import model.Usuario;
  *
  * @author rvsfara
  */
-public class Template {
+public abstract class Template {
     public static void popularBanco() {
         PastaPadrao.criarPastaPadrao();
         UsuarioPadrao.criarUsuarioPadrao();

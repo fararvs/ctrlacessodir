@@ -8,7 +8,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane id="AnchorPane" prefHeight="204.0" prefWidth="281.0" xmlns="http://javafx.com/javafx/8.0.45" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.LoginController">
+<AnchorPane id="AnchorPane" prefHeight="337.0" prefWidth="281.0" xmlns="http://javafx.com/javafx/8.0.45" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.LoginController">
    <children>
       <Label layoutX="25.0" layoutY="80.0" text="Usuário: " />
       <Label layoutX="25.0" layoutY="110.0" text="Senha: " />
@@ -27,5 +27,9 @@
             <Font name="System Bold" size="14.0" />
          </font>
       </Label>
+      <TextField fx:id="txtResposta" layoutX="33.0" layoutY="273.0" />
+      <Label fx:id="pergunta" layoutX="15.0" layoutY="217.0" text="Digite Usuário e pressione esqueci a senha:" />
+      <Button layoutX="141.0" layoutY="233.0" mnemonicParsing="false" onAction="#Esqueci" text="Esqueci a Senha" />
+      <Button layoutX="223.0" layoutY="299.0" mnemonicParsing="false" onAction="#EsqueciSenha" text="Entrar" />
    </children>
 </AnchorPane>

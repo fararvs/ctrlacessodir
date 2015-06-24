@@ -9,7 +9,7 @@ import state.Estado;
  *
  * @author rvsfara
  */
-public class EstadoPadrao {
+public class EstadoPadrao extends Template{
     public static Estado criarEstadoPadrao(){
         Estado st = new Desconectado(); 
         Mensagem msg = new Mensagem();

@@ -1,5 +1,6 @@
 package comand;
 
+import dao.UsuarioDao;
 import model.Usuario;
 
 /**
@@ -13,8 +14,12 @@ public class PerguntaSeguranca implements ValidacaoComand{
     }
     @Override
     public Usuario autenticar(String chave) {
-        Usuario usu = null;
+        UsuarioDao uDao = new UsuarioDao();
+        Usuario usu = uDao.buscarPorResposta(chave);
+        if(usu.getResSeguranca().equals(chave)){
+            return usu;
+        }
         System.out.println("Realizando Autenticação Com Pergunta de Segurança");
-        return usu;
+        return null;
     }
 }
